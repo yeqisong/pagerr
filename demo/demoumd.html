@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 后台 加入以下2个css，第一个支持组件的展示，第二个是支持编辑器的展示 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../dist/style.css?8w">
+    
+    <!-- 完 -->
+    <title>demo</title>
+</head>
+<body>
+    <div id="save">保存</div>
+    <div id="demo"></div>
+    <!-- 后台 加入以下3个文件，前2个是支持页面组件展示bootstrap的，第3个是编辑器的 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <!-- 完 -->
+    <script src="./require-2.3.6.js"></script>
+    <script>
+        require(['../dist/pagerr.umd.js'], Pagerr => {
+            const ph = new Pagerr({
+                // 设置编辑器所在的容器
+                container   : '#demo',
+                // 如果有初始内容设置在这里
+                content     : '初始内容',
+                /**
+                 * 设置上传函数
+                 * 可以取得本地文件file
+                 * 自己实现和服务器的上传，包括校验用户信息、提示资源管理器等
+                 * 上传成功后，返回Promise: resolve(url)
+                 * 上传失败的话，返回Promise: reject(str)   str为base64会自动把本地文件转base64使用，为其它字符串则会弹出错误失败提示。
+                 */
+                uploadImgFun: file => new Promise((resolve, reject) => { reject('base64') }),
+                // 设置编辑器高度
+                height      : '600px',
+                // 新增的
+                innerWidth  : '700px',
+                // 设置编辑器模式，默认pc，可以设置pc\mobile
+                mode        : 'pc',
+                // 设置可否编辑，默认可以true，可以设置false/true
+                editable    : false
+            })
+            // 出来配置外，可以对示例的修改
+            // 即时修改是否可编辑
+            ph.editable(true)
+            // 即时修改尺寸
+            ph.size({ width: '100%', height: '800px', innerWidth: '700px' })
+            // 即时修改内容
+            ph.content('string')
+            // 使用实例的save方法，自己实现一个保存按钮，入参为当前实例的html内容
+            document.querySelector('#save').addEventListener('click', () => {
+                ph.save(content => {
+                    console.log(content)
+                })
+            })
+        })
+     </script>
+</body>
+</html>

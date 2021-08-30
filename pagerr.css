@@ -1,0 +1,157 @@
+html {
+    font-size: 14px !important;
+}
+.pagerr-block {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: block;
+}
+
+.pagerr-block .container,
+.pagerr-block .container-fluid,
+.pagerr-block .container-lg,
+.pagerr-block .container-md,
+.pagerr-block .container-sm,
+.pagerr-block .container-xl {
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.pagerr-block .col,
+.pagerr-block .col-1,
+.pagerr-block .col-10,
+.pagerr-block .col-11,
+.pagerr-block .col-12,
+.pagerr-block .col-2,
+.pagerr-block .col-3,
+.pagerr-block .col-4,
+.pagerr-block .col-5,
+.pagerr-block .col-6,
+.pagerr-block .col-7,
+.pagerr-block .col-8,
+.pagerr-block .col-9,
+.pagerr-block .col-auto,
+.pagerr-block .col-lg,
+.pagerr-block .col-lg-1,
+.pagerr-block .col-lg-10,
+.pagerr-block .col-lg-11,
+.pagerr-block .col-lg-12,
+.pagerr-block .col-lg-2,
+.pagerr-block .col-lg-3,
+.pagerr-block .col-lg-4,
+.pagerr-block .col-lg-5,
+.pagerr-block .col-lg-6,
+.pagerr-block .col-lg-7,
+.pagerr-block .col-lg-8,
+.pagerr-block .col-lg-9,
+.pagerr-block .col-lg-auto,
+.pagerr-block .col-md,
+.pagerr-block .col-md-1,
+.pagerr-block .col-md-10,
+.pagerr-block .col-md-11,
+.pagerr-block .col-md-12,
+.pagerr-block .col-md-2,
+.pagerr-block .col-md-3,
+.pagerr-block .col-md-4,
+.pagerr-block .col-md-5,
+.pagerr-block .col-md-6,
+.pagerr-block .col-md-7,
+.pagerr-block .col-md-8,
+.pagerr-block .col-md-9,
+.pagerr-block .col-md-auto,
+.pagerr-block .col-sm,
+.pagerr-block .col-sm-1,
+.pagerr-block .col-sm-10,
+.pagerr-block .col-sm-11,
+.pagerr-block .col-sm-12,
+.pagerr-block .col-sm-2,
+.pagerr-block .col-sm-3,
+.pagerr-block .col-sm-4,
+.pagerr-block .col-sm-5,
+.pagerr-block .col-sm-6,
+.pagerr-block .col-sm-7,
+.pagerr-block .col-sm-8,
+.pagerr-block .col-sm-9,
+.pagerr-block .col-sm-auto,
+.pagerr-block .col-xl,
+.pagerr-block .col-xl-1,
+.pagerr-block .col-xl-10,
+.pagerr-block .col-xl-11,
+.pagerr-block .col-xl-12,
+.pagerr-block .col-xl-2,
+.pagerr-block .col-xl-3,
+.pagerr-block .col-xl-4,
+.pagerr-block .col-xl-5,
+.pagerr-block .col-xl-6,
+.pagerr-block .col-xl-7,
+.pagerr-block .col-xl-8,
+.pagerr-block .col-xl-9,
+.pagerr-block .col-xl-auto {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.undeline-solid {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+.undeline-dotted {
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+}
+.undeline-dashed {
+    border-bottom-style: dashed;
+    border-bottom-width: 1px;
+}
+.undeline-double {
+    border-bottom-style: double;
+}
+@keyframes waveMove {
+    /* from {
+        background-position: 0 100%;
+    }
+    to {
+        background-position: -10px 100%;
+    } */
+    from {
+        background-position-x: -10px, 0;
+    }
+    to {
+        background-position-x: -30px, -20px;
+    }
+}
+.undeline-line-wave {
+    /* background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath fill='none' stroke='currentColor' d='M0 3.5c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E")
+        repeat-x 0 100%;
+    background-size: 10px auto; */
+    background: radial-gradient(
+                circle at 10px -7px,
+                transparent 8px,
+                currentColor 8px,
+                currentColor 9px,
+                transparent 9px
+            )
+            repeat-x,
+        radial-gradient(
+                circle at 10px 27px,
+                transparent 8px,
+                currentColor 8px,
+                currentColor 9px,
+                transparent 9px
+            )
+            repeat-x;
+    background-size: 20px 20px;
+    background-position: -10px calc(100% + 16px), 0 calc(100% - 4px);
+    animation: waveMove 1s infinite linear;
+}
+table.heditor-def-table {
+    border-collapse: collapse;
+    /* border: 1px solid #909399;
+    border: 1px solid var(--hdinfo); */
+    width: 100%;
+    border-spacing: 0px;
+}
+table.heditor-def-table td {
+    border: 1px solid #909399;
+    border: 1px solid var(--hdinfo);
+}

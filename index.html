@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagerr</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <!--[if lt IE 9]>
+        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- 第一个编辑器-->
+    <div id="save" style="width:100px;height:34px;">保存</div>
+    <div id="app"></div>
+    <br>
+    <!-- 第二个编辑器 -->
+    <!-- <div id="app2"></div> -->
+    <!-- 引入依赖的库 -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    
+    <!-- 以iife模式引入pagerr库 -->
+    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+        import Pagerr from '/src/main.js'
+        // 创建编辑器实例及默认数据
+        const ed = new Pagerr({
+            container: '#app',
+            content  : `t1<b>b1<i color="red">i1<del>d1</del>i2</i>b2</b>t2<br/>shss
+            hssssssssssssssssssssssssssssssss<a href="https://www.baidu.com">wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww</a>shhhhhhhhhhhhhhhhhh
+            <br/>
+            hhshsjshhh <span style="border-bottom-style: solid; border-bottom-width: 1px;">审核后实时数据都会好的等会回</span> 复会返回发积分 <span style="border-bottom-style: solid; border-bottom-width: 1px;">换行符就会发shhwjdhhjaahshshh</span>ddddddddddd
+            `,
+            height    : '600px',
+            innerWidth: '100%'
+        })
+        // 外部按钮获取编辑器内容
+        document.querySelector('#save').addEventListener('click', () => {
+            ed.save(content => {
+                console.log('i get content:', content)
+            })
+        })
+        // 支持同一个页面多个编辑器实例
+        // const ed2 = new Heditor({
+        //     container: '#app2',
+        //     content  : '请输入实例2的内容...'
+        // })
+    </script>
+  </body>
+</html>
